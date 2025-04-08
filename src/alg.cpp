@@ -19,7 +19,7 @@ int countPairs2(int *arr, int len, int value) {
     stop--;
   }
   for (lef = 0; lef < len; lef++) {
-    for (rig = end; rig > lef; rig--) {
+    for (rig = stop; rig > lef; rig--) {
       if (arr[lef] + arr[rig] == value) {
         count++;
       }
@@ -39,7 +39,7 @@ int countPairs3(int *arr, int len, int value) {
       if (arr[cen] == x) {
         count++;
         int j = cen - 1;
-        while (j >= l && arr[j] == x) {
+        while (j >= lef && arr[j] == x) {
           count++;
           j--;
         }
